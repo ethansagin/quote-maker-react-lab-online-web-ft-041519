@@ -9,11 +9,11 @@ export default (state = [], action) => {
     case "UPVOTE_QUOTE":
       let quoteUp = state.find(s => s.id === action.quoteId)
       quoteUp.votes += 1
-      return [...state, quoteUp]
+      return [...state]
     case "DOWNVOTE_QUOTE":
         let quoteDo = state.find(s => s.id === action.quoteId)
         quoteDo.votes === 0 ? quoteDo.votes : (quoteDo.votes -= 1)
-        return [...state, quoteDo]
+        return [...state]
     default:
       return state;
   }
